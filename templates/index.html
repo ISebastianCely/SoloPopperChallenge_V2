@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoloPopper Challenge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/pp.jpg') }}">
+</head>
+<body>
+    <header class="header">
+        <h1><img src="{{ url_for('static', filename='img/pp.jpg') }}" alt="solopopper_icon" class="logo" width="100" height="100"> Solo Popper Challenge</h1>
+    </header>
+
+    <section class="cuerpo">
+        <div class="contenedor sombra table-container">
+            <table class="table-rwd">
+                <tr class="encabezados">
+                {% for header in headings %}
+                <th>{{header}}</th>
+                {% endfor %}
+                </tr>
+     
+                {% for dato in datosi %}
+                <tr>
+                        <td>{{ dato[0] }}</td>
+                        {% if dato[0] == 'Andrés'%}
+                        <td><a href="https://www.leagueofgraphs.com/es/summoner/lan/OtpYummiJg" target="_blank">{{ dato[1] }}</a></td>
+                        {% endif %}
+                        {% if dato[0] == 'Atara'%}
+                        <td><a href="https://www.leagueofgraphs.com/es/summoner/lan/DanAT">{{ dato[1] }}</a></td>
+                        {% endif %}
+                        {% if dato[0] == 'Chiky'%}
+                        <td><a href="https://www.leagueofgraphs.com/es/summoner/lan/Arima+Shuffle" target="_blank">{{ dato[1] }}</a></td>
+                        {% endif %}
+                        {% if dato[0] == 'Holman'%}
+                        <td><a href="https://www.leagueofgraphs.com/es/summoner/lan/PasteIitoJunior" target="_blank">{{ dato[1] }}</a></td>
+                        {% endif %}
+                        {% if dato[0] == 'JuanDa'%}
+                        <td><a href="https://www.leagueofgraphs.com/es/summoner/lan/BenitoC%C3%A4mel%C3%A4s" target="_blank">{{ dato[1] }}</a></td>
+                        {% endif %}
+                        {% if dato[0] == 'Marlon'%}
+                        <td><a href="https://www.leagueofgraphs.com/es/summoner/lan/NoMeDejesPlis" target="_blank">{{ dato[1] }}</a></td>
+                        {% endif %}
+                        {% if dato[0] == 'Miguel'%}
+                        <td><a href="https://www.leagueofgraphs.com/es/summoner/lan/cake124" target="_blank">{{ dato[1] }}</a></td>
+                        {% endif %}
+                        {% if dato[0] == 'Sebastián'%}
+                        <td><a href="https://www.leagueofgraphs.com/es/summoner/lan/SEBASTI%C3%81M" target="_blank">{{ dato[1] }}</a></td>
+                        {% endif %}
+                        {% if dato[0] == 'Villa'%}
+                        <td><a href="https://www.leagueofgraphs.com/es/summoner/lan/littledrusos" target="_blank">{{ dato[1] }}</a></td>
+                        {% endif %}
+                        {% if dato[0] == 'William'%}
+                        <td><a href="https://www.leagueofgraphs.com/es/summoner/lan/BabyCGAKey" target="_blank">{{ dato[1] }}</a></td>
+                        {% endif %}
+
+                        {% if dato[2] == '5BRONZE'%}
+                        <td><img src="{{ url_for('static', filename='img/Emblem_Bronze.webp') }}" alt="solopopper_icon" class="emblem" width="50" height="50"></td>
+                        {% endif %}
+                        {% if dato[2] == '4SILVER'%}
+                        <td><img src="{{ url_for('static', filename='img/Emblem_Silver.webp') }}" alt="solopopper_icon" class="emblem" width="50" height="50"></td>
+                        {% endif %}
+                        {% if dato[2] == '3GOLD'%}
+                        <td><img src="{{ url_for('static', filename='img/Emblem_Gold.webp') }}" alt="solopopper_icon" class="emblem" width="50" height="50"></td>
+                        {% endif %}
+                        {% if dato[2] == '2PLATINUM'%}
+                        <td><img src="{{ url_for('static', filename='img/Emblem_Platinum.webp') }}" alt="solopopper_icon" class="emblem" width="50" height="50"></td>
+                        {% endif %}
+                        {% if dato[2] == '1DIAMOND'%}
+                        <td><img src="{{ url_for('static', filename='img/Emblem_Diamond.webp') }}" alt="solopopper_icon" class="emblem" width="50" height="50"></td>
+                        {% endif %}
+                        
+                        <td>{{ dato[3] }}</td>
+                        <td>{{ dato[4] }}</td>
+                        <td class="partidas">{{ dato[5] }}</td>
+                        <td class="victorias">{{ dato[6] }}</td>
+                        <td class="derrotas">{{ dato[7] }}</td>
+                        <td class="wr">{{ dato[8] }}</td>
+                </tr>
+                {% endfor %}    
+            </table> 
+        </div>
+    </section>
+    <footer class="footer">
+        <p>Todos los derechos reservados. Juan Sebastián Cely</p>
+    </footer>
+</body>
+</html>
