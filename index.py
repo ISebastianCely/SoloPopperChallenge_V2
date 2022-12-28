@@ -92,4 +92,4 @@ def home():
     return render_template('index.html', headings = headings, datosi = datosi)
 # # Permite ejecutar el archivo como el main
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False, host='0.0.0.0')
